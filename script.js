@@ -16,6 +16,7 @@ function sendMessage() {
     if ((name == ``) || (email == ``) || (phone == ``))
     {
         alert(`Contact information cannot be left blank`);
+        return;
     }
 
     if (message == ``)
@@ -32,5 +33,34 @@ function sendMessage() {
     };
 
     emailjs.send(`service_6hv457q`, `template_i1lnmis`, contents).then(function() {alert(`Message Sent`)});
+
+}
+
+function navBarChange () {
+
+    let nav = document.getElementById(`navBar`);
+    let rect = document.getElementById(`about`).getBoundingClientRect();
+
+    nav.style.backgroundColor = `rgba(255, 193, 112, 0.5)`;
+    nav.style.height = `20px`;
+
+    if (rect.top < 0)
+    {
+        nav.style.position = `fixed`;
+
+    }
+    else
+    {
+        nav.style.position = `sticky`;
+
+    }
+
+    setTimeout(() => {
+        
+        nav.style.backgroundColor = `rgb(255, 193, 112)`; 
+        
+        nav.style.height = `40px`;        
+
+    }, 750);
 
 }

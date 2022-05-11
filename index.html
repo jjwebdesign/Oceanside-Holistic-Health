@@ -21,7 +21,7 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        .navBar {
+        #navBar {
 
             display: flex;
             align-items: center;
@@ -36,9 +36,11 @@
             margin: 0 auto;
 
             background-color: #fdc171;
+
+            transition: background-color ease 0.5s, height ease 0.3s;
         }
 
-        .navBar a { 
+        #navBar a { 
 
             display: flex;
             align-items: center;
@@ -53,19 +55,19 @@
 
         }
 
-        .navBar a:hover { 
+        #navBar a:hover { 
 
-            background-color: #ce7d5e;
+            background-color: rgba(255, 193, 112, 0.5);
             color: black;
         }
 
-        .navBar a:visited { 
+        #navBar a:visited { 
 
             color: black;
 
         }
 
-        .navBar a:visited:hover { 
+        #navBar a:visited:hover { 
 
             background-color: #ce7d5e;
             color: black;
@@ -200,7 +202,7 @@
             margin: 5% 0;
 
             border-radius: 20px;
-            background-color: #fdc171;
+            background-color: rgb(255, 193, 112);
             border: 2px solid rgba(0, 0, 0, 0.6);
             text-align: center;
             font-size: 30px;
@@ -211,7 +213,7 @@
         #sendButton:hover {
 
             border-radius: 10px;
-            background-color: #fcb04c;
+            background-color: rgb(252, 176, 76);
             width: 80%;
         }
 
@@ -263,12 +265,13 @@
     
     <title>Oceanside Holistic Health</title>
 </head>
-<body>
 
-    <div class="navBar">
+<body onscroll="navBarChange()">
+
+    <div id="navBar">
         <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="#servicesAnchor">Services</a>
+        <a href="#bookAnchor">Book</a>
     </div>
 
     <div class="mainCanvas">
@@ -321,6 +324,8 @@
                 
             </div>
         </div>
+
+        <a id="servicesAnchor"></a>
 
         <div class="infoCanvas" id="services">
             <div class="info">
@@ -407,6 +412,8 @@
             </div>
 
         </div>
+
+        <a id="bookAnchor"></a>
 
         <div class="infoCanvas" id="book">
             <div class="bookForm">
