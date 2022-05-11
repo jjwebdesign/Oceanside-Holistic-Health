@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"> </script>
+
+    <style>
+
+        body {
+
+            margin: 0;
+            background-image: url(img/washi.jpg);
+            color: black;
+
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navBar {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: sticky;
+            z-index: 1;
+            top: 0;
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            margin: 0 auto;
+
+            background-color: #fdc171;
+        }
+
+        .navBar a { 
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            height: 100%;
+            width: 33.33%;
+
+            color: black;
+            text-decoration: none;
+            border: 1px solid black;
+
+        }
+
+        .navBar a:hover { 
+
+            background-color: #ce7d5e;
+            color: black;
+        }
+
+        .navBar a:visited { 
+
+            color: black;
+
+        }
+
+        .navBar a:visited:hover { 
+
+            background-color: #ce7d5e;
+            color: black;
+        }
+
+        .header {
+
+            text-align: center;
+            width: 100%;
+            margin: 1% 0;
+        }
+
+
+        .infoCanvas {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto;
+
+            width: 100%;
+            height: 100vh;
+
+            border-bottom: 5px solid rgba(0, 0, 0);
+
+        }
+
+        .info {
+
+            width: 70%;
+            height: 50%;
+            padding: 5%;
+
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        .bookForm {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            width: 70%;
+            height: 80%;
+            padding: 5%;
+
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+
+        }
+
+        .bookFormTextInput {
+
+            margin: 2%;
+
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(0, 0, 0, 0.6);
+        }
+
+        @media only screen and (max-width: 950px) {
+
+            .info {
+                width: 90%;
+                height: 60%; 
+                font-size: 18px;   
+            }
+
+            .bookForm {
+                width: 90%;
+                height: 60%; 
+                font-size: 18px;   
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+
+            .info {
+                width: 90%;
+                height: 80%; 
+                font-size: 18px;   
+
+            }
+
+            .bookForm {
+
+                width: 90%;
+                height: 80%; 
+                font-size: 18px;   
+
+            }
+
+        }
+
+        #about {
+
+            margin-top: 0;
+            background: url(img/sunset-background.jpg) no-repeat;
+            background-position: center center;
+            background-size:cover;
+        }
+
+        #consultation {
+
+            background: url(img/stoneMassage-background.jpg) no-repeat;
+            background-position: center center;
+            background-size:cover;
+
+        }
+
+        #services {
+
+            background: url(img/face-background.jpg) no-repeat;
+            background-position: center center;
+            background-size:cover;
+            height: 100%;
+
+        }
+
+
+        #book {
+
+            text-align: center;
+            height: 1200px;
+            margin-bottom: 0;
+            background: url(img/back-background.jpg) no-repeat;
+            background-position: center center;
+            background-size:cover;
+        }
+
+        #comments {
+
+            margin-top: 2%;
+            width: 50%;
+            height: 50%;
+
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 2px solid rgba(0, 0, 0, 0.6);
+
+            transition: width ease 0.4s;
+
+            resize: none;
+
+        }
+
+        #sendButton {
+
+            height: 150px;
+            width: 70%;
+
+            margin: 5% 0;
+
+            border-radius: 20px;
+            background-color: #fdc171;
+            border: 2px solid rgba(0, 0, 0, 0.6);
+            text-align: center;
+            font-size: 30px;
+
+            transition: background-color ease 0.4s, border-radius ease 0.6s, width ease 0.4s;
+        }
+
+        #sendButton:hover {
+
+            border-radius: 10px;
+            background-color: #fcb04c;
+            width: 80%;
+        }
+
+    </style>
+    
+    <title>Oceanside Holistic Health</title>
+</head>
+<body>
+
+    <div class="navBar">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="mainCanvas">
+        <div class="infoCanvas" id="about">
+
+            <div class="info">
+                <h2 class="header">About</h2>
+
+                <p>
+                    Owned and operated by Miranda Cockayne, a certified Spa Practitioner, and certified
+                    Holistic Nutritionist. Oceanside Holistic Health and Bodywork has been operating in the
+                    Oceanside area of Vancouver Island since 2013 offering nutritional consultation and
+                    healthy cooking workshops; as well as massage and spa treatments.
+                </p>
+
+                <h2 class="header">What is Holistic Health?</h2>
+
+                <p>
+                    Your body wants to be well and one of the most powerful ways to positively affect the
+                    health of your brain, gut, immune system, hormones, and body systems is through
+                    eating a nutrient dense diet and making healthy lifestyle choices. A Holistic Nutritionist
+                    and Health Coach can create personalized lifestyle and nutrition programs for people of
+                    all ages.
+                </p>
+
+            </div>
+        </div>
+
+
+        <div class="infoCanvas" id="consultation">
+
+            <div class="info">
+
+                <h3 class="header">Nutritional Consultation for the Following Health and Lifestyle Challenges:</h3>
+
+                <ul style="list-style: square; text-align: left; margin-left: 20%; margin-top: 5%;" >
+
+                    <li>Healthy Eating for Diabetes Prevention and Maintenance</li>
+                    <li>Nutrient Dense Foods for Boosted Immunity</li>
+                    <li>Reversing Pre-Diabetes</li>
+                    <li> Heart Health Diets</li>
+                    <li>Specialized Diets such as Gluten Free, Vegetarian and Anti-Inflammatory Diets</li>
+                    <li> Healthy Aging</li>
+                    <li> Toddler Health and Feeding Picky Eater</li>
+                    <li> Weight Loss</li>
+                    <li> Sport and Fitness Nutrition</li>
+                    <li> Diabetes and Heart Health Education</li>
+
+                </ul>
+                
+            </div>
+        </div>
+
+        <div class="infoCanvas" id="services">
+            <div class="info">
+                <h1 class="header">Services</h1>
+
+                <hr>
+
+                <h3>Bodywork</h3>
+
+                <p>
+                    With over 10 years of experience working in top Vancouver Island Spas and in private
+                    practice, we have curated a specialized massage treatment menu that will ensure you
+                    are left feeling pampered, relaxed, and rejuvenated.
+                </p>
+
+                <hr>
+
+                <h3>Sea Escape</h3>
+
+                <p>
+                    This full body massage using light to medium pressure soothes the body and mind,
+                    stimulates circulation and promotes deep relaxation.
+                    
+                    <h4>60min $75</h4>
+                    <h4>90min $100</h4>
+                </p>
+
+                <hr>
+
+                <h3>Ocean Elements Massage</h3>
+
+                <p>
+                    This locally inspired treatment was created to bring deep relaxation and rejuvenation to
+                    the body and mind.
+                    Warm Pacific Ocean tumbled basalt stones are worked into your shoulders and back,
+                    releasing tension in muscles and bringing you to a state of warmth and relaxation.
+                    Paired with your choice of essential oils and medium pressure massage; the treatment
+                    finishes with a sea salt and kelp foot scrub followed by a lengthy shea butter foot
+                    massage.
+
+                    <h4>90min $130</h4>
+                </p>
+
+                <hr>
+
+                <h3>Ocean Elements Massage</h3>
+
+                <p>
+                    This locally inspired treatment was created to bring deep relaxation and rejuvenation to
+                    the body and mind.
+                    Warm Pacific Ocean tumbled basalt stones are worked into your shoulders and back,
+                    releasing tension in muscles and bringing you to a state of warmth and relaxation.
+                    Paired with your choice of essential oils and medium pressure massage; the treatment
+                    finishes with a sea salt and kelp foot scrub followed by a lengthy shea butter foot
+                    massage.
+
+                    <h4>90min $130</h4>
+
+                </p>
+
+                <hr>
+
+                <h3>Ocean Tide Facial / Massage Package</h3>
+
+                <p>
+                    Get ready to drift away with this deeply relaxing treatment. Includes a locally sourced
+                    organic mini facial for a nourishing skin treatment; combined with a full body relaxation
+                    massage.
+
+                    <h4>90min $130</h4>
+
+                </p>
+
+                <h3>Enhance your massage with:</h3>
+
+                <p>*Organic cbd pain relief salve $10 </p>
+
+                <p> *Warm Pacific Ocean tumbled basalt stones to ease tension in targeted areas and
+                    promote warmth and relaxation $10
+                </p>
+
+                <p>*Enhance your massage with an organic mini facial $40</p>
+
+            </div>
+
+        </div>
+
+        <div class="infoCanvas" id="book">
+            <div class="bookForm">
+
+                <h1 class="header" style="margin: 0 0 5% 0;">Book</h1>
+
+                <p>Fill in your information below and I will contact you</p>
+
+                <span>Name: </span>
+                <input type="text" class="bookFormTextInput" id="name">
+
+                <span>Email: </span>
+                <input type="email" class="bookFormTextInput" id="email">
+
+                <span>Phone: </span>
+                <input type="text" class="bookFormTextInput" id="phone">
+
+                <span style="margin: 3% 0 0 0;">Add any inquires or comments below</span>
+
+                <textarea name="comments" id="comments"></textarea>
+
+                <input type="button" value="Send!" id="sendButton" onclick="sendMessage()">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html
